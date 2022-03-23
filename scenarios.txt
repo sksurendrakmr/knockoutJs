@@ -1,1 +1,7 @@
 our goal is to make the name dynamic.
+
+we want to interact with interface to then update 
+observables.
+
+to tap + -> increase the number
+to tap - -> decrease the number

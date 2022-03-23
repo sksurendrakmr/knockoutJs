@@ -16,6 +16,7 @@ function CounterViewModel() {
    * It will takes an argument which is initial state.
    */
   self.firstName = ko.observable("sk");
+  self.count = ko.observable(0);
 
   /**
    * The way we update observables in knockout by calling
@@ -25,6 +26,18 @@ function CounterViewModel() {
 
   //To get the value
   self.firstName(); //calling without argument
+
+  self.increase = function () {
+    var currentValue = self.count();
+    self.count(currentValue + 1);
+  };
+
+  self.decrease = function () {
+    var currentValue = self.count();
+    if (currentValue > 0) {
+      self.count(currentValue - 1);
+    }
+  };
 }
 
 /**
