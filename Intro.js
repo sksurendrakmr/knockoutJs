@@ -38,6 +38,22 @@ function CounterViewModel() {
       self.count(currentValue - 1);
     }
   };
+
+  /**
+   * instead of obervable for dogStatus, we can use a feature
+     called computed.
+     computed takes a function. In this function,we can utilize other
+     observables that we have to kind of create a consolidated result.
+     
+     Here, Computed function is returning a result based on a different
+     observable.
+   */
+  self.dogStatus = ko.computed(function () {
+    if (self.count() === 0) {
+      return "DISAPPOINTED";
+    }
+    return "...";
+  });
 }
 
 /**
