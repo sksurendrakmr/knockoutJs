@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="knockout-app" class="card">
+    <header>
+       Good Dog Walks Inc.
+    </header>
+    <div class="card-section">
+       <h2>Toy Inventory</h2>
+       <p data-bind="visible: inventory().length === 0">You don't have any toys yet!</p>
+       <p data-bind="visible: inventory().length > 0">These are the assets we have to work with.</p>
+       
+       <button data-bind="click: addItem, enable: inventory().length < 5">+ Add Toy</button>
+       <ul class="counter-ui-container" data-bind="foreach: inventory">
+          <li>
+             <span>
+                <span data-bind="class: $data.icon"></span>
+                <span class="li_label" data-bind="text: $data.text"></span>
+             </span>
+             <button class="button_small" data-bind="click: $parent.removeItem, attr: {'item-index': $index}">
+                &times;
+             </button>
+          </li>
+       </ul>
+    </div>
+    <footer>
+       <span>Have a tail wagging day!</span>
+    </footer>
+ </div> 
+ <script src="index.js"></script>
+</body>
+</html>
