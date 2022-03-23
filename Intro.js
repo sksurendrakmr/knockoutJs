@@ -16,6 +16,15 @@ function CounterViewModel() {
    * It will takes an argument which is initial state.
    */
   self.firstName = ko.observable("sk");
+
+  /**
+   * The way we update observables in knockout by calling
+   * the variable as a function.
+   */
+  self.firstName("suri");
+
+  //To get the value
+  self.firstName(); //calling without argument
 }
 
 /**
@@ -55,6 +64,5 @@ ko.applyBindings(
  * 3. data-bind -> its an attribute that we put on anywhere in the dom and that's
  *                  how we get information from the javascript directly into the dom
  *                  without needing to manually select elements and do the stuff by ourself.
- *
  *
  */
