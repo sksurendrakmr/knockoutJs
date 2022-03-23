@@ -11,3 +11,31 @@ function CounterViewModel() {
   //function level scope.
   var self = this;
 }
+
+/**
+ * Wire up the knockout functionality to the html dom.
+ * When we load knockout on the page, we have access to
+ * window level library called 'ko'
+ *
+ * In applyBindings() arguments
+ * 1. It takes in an instance of a viewModel.
+ * 2. selector -> which will tell us which node inside
+ * the dom tree to apply to.
+ *
+ */
+
+ko.applyBindings(
+  new CounterViewModel(),
+  document.querySelector("#knockout-app")
+);
+
+/**
+ * Now to verify above changes, we will create an
+ * observable.
+ *
+ * Observable is a piece of state where a knockout under
+ * the hood track changes of this.
+ *
+ * If an observable changes, knockout knows to update the
+ * dom.
+ */
