@@ -19,13 +19,13 @@
        <p data-bind="visible: inventory().length > 0">These are the assets we have to work with.</p>
        
        <button data-bind="click: addItem, enable: inventory().length < 5">+ Add Toy</button>
-       <ul class="counter-ui-container" data-bind="foreach: inventory">
+       <ul class="counter-ui-container"  data-bind="foreach: inventory">
           <li>
              <span>
                 <span data-bind="class: $data.icon"></span>
                 <span class="li_label" data-bind="text: $data.text"></span>
              </span>
-             <button class="button_small" data-bind="click: $parent.removeItem, attr: {'item-index': $index}">
+             <button class="button_small"  data-bind="click: $parent.removeItem, attr: {'item-index': $index}">
                 &times;
              </button>
           </li>
