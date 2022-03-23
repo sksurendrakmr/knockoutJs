@@ -10,6 +10,12 @@ function CounterViewModel() {
   //recommended and very common to have reference of this
   //function level scope.
   var self = this;
+
+  /**
+   * ko.observable will create a new observable.
+   * It will takes an argument which is initial state.
+   */
+  self.firstName = ko.observable("sk");
 }
 
 /**
@@ -38,4 +44,17 @@ ko.applyBindings(
  *
  * If an observable changes, knockout knows to update the
  * dom.
+ */
+
+/**
+ * Three things that knockout gives us (building block of knockoutjs) :-
+ * 1. Concept of an observable.
+ * 2. applyBindings -> get the knockout initialize on the page and get it wired up.
+ *                     Typically, we call it once unless we have components entering
+ *                     leaving page.
+ * 3. data-bind -> its an attribute that we put on anywhere in the dom and that's
+ *                  how we get information from the javascript directly into the dom
+ *                  without needing to manually select elements and do the stuff by ourself.
+ *
+ *
  */
